@@ -8,7 +8,7 @@ steps:
         "--path",
         "samples/python",
         "--publish",
-        "gcr.io/qwiklabs-gcp-02-4e98ce5c1f05/cloudbowl-samples-python:$COMMIT_SHA",
+        "gcr.io/$PROJECT_ID/cloudbowl-samples-python:$COMMIT_SHA",
       ]
 
   - name: "gcr.io/cloud-builders/gcloud"
@@ -16,9 +16,9 @@ steps:
       [
         "run",
         "deploy",
-        "--image=gcr.io/qwiklabs-gcp-02-4e98ce5c1f05/cloudbowl-samples-python:$COMMIT_SHA",
+        "--image=gcr.io/$PROJECT_ID/cloudbowl-samples-python:$COMMIT_SHA",
         "--platform=managed",
-        "--project=qwiklabs-gcp-02-4e98ce5c1f05",
+        "--project=$PROJECT_ID",
         "--region=us-central1",
         "--allow-unauthenticated",
         "--memory=256Mi",
